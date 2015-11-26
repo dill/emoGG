@@ -1,0 +1,3 @@
+# Data sources...
+
+`emojis.json` is from https://github.com/muan/emojilib/blob/master/emojis.json, released under the MIT license.
