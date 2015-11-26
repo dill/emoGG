@@ -25,6 +25,7 @@ char <- lapply(ff, function(x) if(!is.null(x$char)) x$char else "")
 char <- unlist(char)
 
 # put that together
+options(stringsAsFactors=FALSE) # what am I, a monster?
 emojis <- data.frame(keyword = keywords,
                      code    = rep(char, reps),
                      emoji   = rep(keys, reps))
