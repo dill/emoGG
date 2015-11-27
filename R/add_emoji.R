@@ -2,7 +2,7 @@
 #'
 #' @importFrom grid rasterGrob
 #' @export
-#' @param img A png object, e.g, from using \code{emoji_get}.
+#' @param emoji either a codepoint (without \code{\\U} etc), or the result from \code{\link{emoji_search}}
 #' @param x x value of the emoji center. Ignored if y and ysize are not specified.
 #' @param y y value of the emoji center. Ignored if x and ysize are not specified.
 #' @param ysize Height of the emoji. The width is determined by the aspect ratio of the original image. Ignored if x and y are not specified.
@@ -12,23 +12,23 @@
 #' library(emoGG)
 #'
 #' # Put a emoji behind a plot
-#' flower <- emoji_get("1f337" )[[1]]
-#' qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(flower)
+#' qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") +
+#'  add_emoji("1f337")
 #'
 #' # Put a silhouette anywhere
 #' posx <- runif(50, 0, 10)
 #' posy <- runif(50, 0, 10)
 #' sizey <- runif(50, 0.4, 2)
-#'
-#' cat <- emoji_get("1f697" )[[1]]
 #' p <- ggplot(data.frame(x = posx, y = posy), aes(x, y)) +
 #'             geom_point(color = rgb(0,0,0,0))
 #' for (i in 1:50) {
-#'   p <- p + add_emoji(cat, posx[i], posy[i], sizey[i])
+#'   p <- p + add_emoji("1f697", posx[i], posy[i], sizey[i])
 #' }
 #' }
 #' @note Based on \code{add_phylopic} from \code{rphylopic} by Scott Chamberlain.
-add_emoji <- function(img, x=NULL, y=NULL, ysize=NULL){
+add_emoji <- function(emoji, x=NULL, y=NULL, ysize=NULL){
+
+  img <- emoji_get(emoji)[[1]]
 
   if (!is.null(x) && !is.null(y) && !is.null(ysize)){
     aspratio <- nrow(img) / ncol(img) ## get aspect ratio of original image
@@ -41,6 +41,8 @@ add_emoji <- function(img, x=NULL, y=NULL, ysize=NULL){
     ymax <- Inf
     xmin <- -Inf
     xmax <- Inf
+    img <- matrix(rgb(img[,,1], img[,,2], img[,,3], img[,,4] * 0.4),
+                  nrow = dim(img)[1])
   }
   imgGrob <- rasterGrob(img)
   return(
