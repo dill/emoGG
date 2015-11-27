@@ -1,3 +1,5 @@
+#' Get an emoji image from its codepoint
+#'
 #' @export
 #' @rdname emoji_get
 #' @param input either a codepoint (without \code{\U} etc), or the result from \code{\link{emoji_search}}
@@ -5,6 +7,9 @@
 #' @return list of images
 #'
 #' @note Adapted from \code{rphylopic} code by Scott Chamberlain
+#' @importFrom png readPNG
+#' @importFrom RCurl getURLContent
+#' @author David L Miller
 emoji_get <- function(input, size=72){
 
   # set the size (default to biggest for best display)

@@ -1,8 +1,11 @@
 Package: emoGG
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Use Emoji in ggplot2
+Version: 0.0.1
+Authors@R: person("David L", "Miller", email = "dave@ninepointeightone.net", role = c("aut", "cre"))
+Description: Use emoji in ggplot2 plots...
 Depends: R (>= 3.2.2)
-License: What license is it under?
+License: MIT
 LazyData: true
+Depends:
+  R (>= 3.0),
+  ggplot2, grid, proto

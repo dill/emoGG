@@ -1,14 +1,13 @@
-library(proto)
-library(grid)
-library(ggplot2)
-
-#geom_emoji <- function (mapping = NULL, data = NULL, stat = "identity",
-#                         position = "identity", show_guide = FALSE, ...) {
-#  GeomEmoji$new(mapping = mapping, data = data, stat = stat,
-#                 position = position, show_guide = show_guide, ...)
-#}
-
-
+#' Emoji geom
+#'
+#' Use emoji as you would \code{\link{geom_point}}.
+#'
+#' @author David L Miller
+#' @importFrom proto proto
+#' @importFrom grid rasterGrob
+#' @export geom_emoji
+#'
+#'
 emojisGrob <- function(x, y, size, code){
 
    img <- emoji_get(code)[[1]]
@@ -19,17 +18,6 @@ emojisGrob <- function(x, y, size, code){
               height        = size,
               width         = size)
 }
-
-# test
-## library(RCurl)
-## library(png)
-## library(grid)
-## source("emoji_get.R")
-## id <- "1f697"
-## pp <- emoji_get(id)[[1]]
-## g <- emojiGrob(c(1,0.5), c(1,0.5), 1, pp)
-## pushViewport(vp=viewport(width=1, height=1))
-## grid.draw(g)
 
 GeomEmoji <- proto(ggplot2:::Geom, {
 
@@ -70,8 +58,6 @@ GeomEmoji <- proto(ggplot2:::Geom, {
 })
 
 
-
-#geom_emoji <- GeomEmoji$new()
 geom_emoji <- function(mapping = NULL, data = NULL, stat = "identity",
                        position = "identity", na.rm = FALSE,
                        show.legend = NA, inherit.aes = TRUE, ...) {
@@ -89,17 +75,4 @@ geom_emoji <- function(mapping = NULL, data = NULL, stat = "identity",
     )
   )
 }
-
-#library(RCurl)
-#library(png)
-#library(grid)
-#source("emoji_get.R")
-#acar <- "1f4a9"
-##p <- qplot(mpg, wt, data=mtcars, geom="emoji", code=acar, size=cyl)
-#p <- ggplot(aes(x=mpg, y=wt), data=mtcars)+
-#      geom_emoji(size=I(0.05))#img=I(emoji_get("1f697")[[1]]))
-#print(p)
-
-
-
 
