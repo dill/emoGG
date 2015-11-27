@@ -26,9 +26,10 @@ char <- unlist(char)
 
 # put that together
 options(stringsAsFactors=FALSE) # what am I, a monster?
-emojis <- data.frame(keyword = keywords,
+emojis <- data.frame(emoji   = rep(keys, reps),
                      code    = rep(char, reps),
-                     emoji   = rep(keys, reps))
+                     keyword = keywords)
+rownames(emojis) <- NULL
 
 # and save!
 save(emojis, file="emojis.RData")

@@ -31,13 +31,13 @@ First need to find an emoji, using the `emoji_search` function. First look for a
 
 ```r
 emoji_search("tulip")
-#>            keyword       code     emoji
-#> tulip1     flowers \U0001f337     tulip
-#> tulip2       plant \U0001f337     tulip
-#> tulip3      nature \U0001f337     tulip
-#> tulip4      summer \U0001f337     tulip
-#> tulip5      spring \U0001f337     tulip
-#> copyright1      ip           ©️ copyright
+#>          emoji       code keyword
+#> 626      tulip \U0001f337 flowers
+#> 627      tulip \U0001f337   plant
+#> 628      tulip \U0001f337  nature
+#> 629      tulip \U0001f337  summer
+#> 630      tulip \U0001f337  spring
+#> 3051 copyright           ©️      ip
 ```
 
 The `iris` example with **real** irises (well, tulips...)
