@@ -7,7 +7,7 @@
 emoji_get(input, size = 72)
 }
 \arguments{
-\item{input}{either a codepoint (without \code{\U} etc), or the result from \code{\link{emoji_search}}}
+\item{input}{either a codepoint (without \code{\\U} etc), or the result from \code{\link{emoji_search}}}
 
 \item{size}{the size of the resulting image (72, 36, 16)}
 }

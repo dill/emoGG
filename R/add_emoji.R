@@ -1,6 +1,6 @@
 #' Input an emoji and create a ggplot2 layer to add to an existing plot
 #'
-#' @import grid
+#' @importFrom grid rasterGrob
 #' @export
 #' @param img A png object, e.g, from using \code{emoji_get}.
 #' @param x x value of the emoji center. Ignored if y and ysize are not specified.

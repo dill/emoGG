@@ -4,7 +4,7 @@
 \alias{emojisGrob}
 \title{Emoji geom}
 \usage{
-emojisGrob(x, y, size, code)
+emojisGrob(x, y, size, emoji)
 }
 \description{
 Use emoji as you would \code{\link{geom_point}}.

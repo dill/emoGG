@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @rdname emoji_get
-#' @param input either a codepoint (without \code{\U} etc), or the result from \code{\link{emoji_search}}
+#' @param input either a codepoint (without \code{\\U} etc), or the result from \code{\link{emoji_search}}
 #' @param size the size of the resulting image (72, 36, 16)
 #' @return list of images
 #'

@@ -2,8 +2,8 @@
 
 export(add_emoji)
 export(emoji_get)
+export(emoji_search)
 export(geom_emoji)
-import(grid)
 importFrom(RCurl,getURLContent)
 importFrom(grid,rasterGrob)
 importFrom(png,readPNG)
