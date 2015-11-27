@@ -3,13 +3,12 @@ Title: Use Emoji in ggplot2
 Version: 0.0.1
 Authors@R: person("David L", "Miller", email = "dave@ninepointeightone.net", role = c("aut", "cre"))
 Description: Use emoji in ggplot2 plots...
-Depends: R (>= 3.2.2)
+Depends: R (>= 3.2.2),
+  ggplot2
 License: MIT
 LazyData: true
 Imports:
-  ggplot2,
   grid,
-  proto,
   RCurl,
   png,
   proto
