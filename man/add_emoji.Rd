@@ -4,10 +4,10 @@
 \alias{add_emoji}
 \title{Input an emoji and create a ggplot2 layer to add to an existing plot}
 \usage{
-add_emoji(img, x = NULL, y = NULL, ysize = NULL)
+add_emoji(emoji, x = NULL, y = NULL, ysize = NULL)
 }
 \arguments{
-\item{img}{A png object, e.g, from using \code{emoji_get}.}
+\item{emoji}{either a codepoint (without \code{\\U} etc), or the result from \code{\link{emoji_search}}}
 
 \item{x}{x value of the emoji center. Ignored if y and ysize are not specified.}
 
@@ -30,19 +30,17 @@ library(ggplot2)
 library(emoGG)
 
 # Put a emoji behind a plot
-flower <- emoji_get("1f337" )[[1]]
-qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(flower)
+qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") +
+ add_emoji("1f337")
 
 # Put a silhouette anywhere
 posx <- runif(50, 0, 10)
 posy <- runif(50, 0, 10)
 sizey <- runif(50, 0.4, 2)
-
-cat <- emoji_get("1f697" )[[1]]
 p <- ggplot(data.frame(x = posx, y = posy), aes(x, y)) +
             geom_point(color = rgb(0,0,0,0))
 for (i in 1:50) {
-  p <- p + add_emoji(cat, posx[i], posy[i], sizey[i])
+  p <- p + add_emoji("1f697", posx[i], posy[i], sizey[i])
 }
 }
 }

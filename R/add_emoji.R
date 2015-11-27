@@ -26,6 +26,7 @@
 #' }
 #' }
 #' @note Based on \code{add_phylopic} from \code{rphylopic} by Scott Chamberlain.
+#' @importFrom ggplot2 annotation_custom
 add_emoji <- function(emoji, x=NULL, y=NULL, ysize=NULL){
 
   img <- emoji_get(emoji)[[1]]
