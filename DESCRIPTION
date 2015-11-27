@@ -11,4 +11,5 @@ Imports:
   grid,
   proto,
   RCurl,
+  png,
   proto
