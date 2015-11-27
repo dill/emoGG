@@ -4,9 +4,12 @@
 library(RCurl)
 library(png)
 library(grid)
+library(ggplot2)
 source("recolor_phylopic.r")
-source("add_phylopic.r")
+source("add_emoji.r")
 source("emoji_get.R")
+source("geom_custom.R")
+
 
 # load the emojis
 load("data/emojis.RData")
@@ -23,25 +26,13 @@ pp <- emoji_get(id)[[1]]
 
 
 # working example
-library(ggplot2)
 #posx <- runif(50, 0, 10)
 #posy <- runif(50, 0, 10)
-#sizey <- runif(50, 0.4, 2)
-#cols <- sample(c("black", "darkorange", "grey42", "white"), 50, replace = TRUE)
-#
-###cat <- get_image("23cd6aa4-9587-4a2e-8e26-de42885004c9", size = 128)[[1]]
-#cat <- pp
-#p <- ggplot(data.frame(x = posx, y = posy), aes(x, y)) +
-#            geom_point(color = rgb(0,0,0,0))
-#for (i in 1:50) {
-#  p <- p + add_phylopic(cat, 1, posx[i], posy[i], sizey[i])#, cols[i])
-#}
-
-p <- ggplot(mtcars, aes(wt, mpg))+
-      geom_point(color = rgb(0,0,0,0))
-for (i in 1:nrow(mtcars)) {
-  p <- p + add_phylopic(pp, 1, mtcars$wt[i], mtcars$mpg[i], 1)
-}
-print(p)
+#p <- ggplot(data.frame(x = posx, y = posy), aes(x, y, code=I("1f63b"))) + geom_emoji()
 
 
+#p <- ggplot(mtcars, aes(wt, mpg, code="1f697"))+ geom_emoji()
+
+# background image
+#flower <- emoji_get("1f337" )[[1]]
+#qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(flower)

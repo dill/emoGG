@@ -5,6 +5,7 @@
 #' @param img A png object, e.g, from using \code{get_image}.
 #' @param alpha A value between 0 and 1, specifying the opacity of the silhouette.
 #' @param color Color to plot the silhouette in.
+#' @note Based on \code{recolor_phylopic} from \code{rphylopic} by Scott Chamberlain.
 recolor_phylopic <- function(img, alpha = 0.2, color = NULL){
 
   if (is.null(color)) {
