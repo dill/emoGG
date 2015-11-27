@@ -6,8 +6,6 @@ Description: Use emoji in ggplot2 plots...
 Depends: R (>= 3.2.2)
 License: MIT
 LazyData: true
-Depends:
-  R (>= 3.0)
 Imports:
   ggplot2,
   grid,
