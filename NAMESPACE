@@ -3,6 +3,7 @@
 export(add_emoji)
 export(emoji_get)
 export(emoji_search)
+export(emojisGrob)
 export(geom_emoji)
 importFrom(RCurl,getURLContent)
 importFrom(grid,rasterGrob)

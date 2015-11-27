@@ -8,6 +8,7 @@
 #' @export geom_emoji
 #'
 #'
+#' @export
 emojisGrob <- function(x, y, size, emoji){
 
    img <- emoji_get(emoji)[[1]]
@@ -33,7 +34,7 @@ GeomEmoji <- proto(ggplot2:::Geom, {
     data <- aesdefaults(data, .$default_aes(), list(...))
 
     with(data, ggname(.$my_name(),
-         emojisGrob(0.5, 0.5, size, emoji)))
+         emojisGrob(0.05, 0.05, size, emoji)))
   }
 
   default_stat <- function(.) StatIdentity
