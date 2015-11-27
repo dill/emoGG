@@ -8,9 +8,9 @@
 #' @export geom_emoji
 #'
 #'
-emojisGrob <- function(x, y, size, code){
+emojisGrob <- function(x, y, size, emoji){
 
-   img <- emoji_get(code)[[1]]
+   img <- emoji_get(emoji)[[1]]
    rasterGrob(x             = x,
               y             = y,
               image         = img,
@@ -26,20 +26,19 @@ GeomEmoji <- proto(ggplot2:::Geom, {
 
   draw <- function(., data, scales, coordinates, ...) {
     coords <- coord_transform(coordinates, data, scales)
-    emojisGrob(coords$x, coords$y, coords$size, coords$code)
+    emojisGrob(coords$x, coords$y, coords$size, coords$emoji)
   }
 
   draw_legend <- function(., data, ...) {
     data <- aesdefaults(data, .$default_aes(), list(...))
 
     with(data, ggname(.$my_name(),
-        emojisGrob(0.5, 0.5, size, code) )
-    )
+         emojisGrob(0.5, 0.5, size, emoji)))
   }
 
   default_stat <- function(.) StatIdentity
   required_aes <- c("x", "y")
-  default_aes <- function(.) aes(size=0.05, code="1f697")
+  default_aes <- function(.) aes(size=0.05, emoji="1f697")
   guide_geom <- function(.) "emoji"
 
   icon <- function(.) # a grob representing the geom for the webpage
