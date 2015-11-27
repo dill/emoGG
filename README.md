@@ -83,6 +83,6 @@ qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(emoji=
 
 Emoji lookup is from @muan's [`emojilib`](https://github.com/muan/emojilib).
 
-Emoji are loaded from a CDN using Twitter's [`twemoji`](https://github.com/twitter/twemoji).
+Emoji are loaded from a CDN using Twitter's [`twemoji`](https://github.com/twitter/twemoji), which is [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) licensed. You can get attribution details [on the project page](https://github.com/twitter/twemoji#attribution-requirements).
 
 With apologies, DLM.
