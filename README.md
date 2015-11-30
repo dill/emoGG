@@ -22,7 +22,6 @@ devtools::install_github("dill/emoGG")
 
 ```r
 library(ggplot2)
-#> Loading required package: methods
 library(emoGG)
 ```
 
@@ -46,6 +45,7 @@ The `iris` example with **real** irises (well, tulips...)
 ```r
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_emoji(emoji="1f337")
+#> Error in emoji_get(emoji): could not find function "is"
 ```
 
 ![plot of chunk iris_ex](figure/iris_ex-1.png) 
@@ -55,6 +55,7 @@ What about plotting `mtcars` with **real** cars?
 
 ```r
 ggplot(mtcars, aes(wt, mpg))+ geom_emoji(emoji="1f697")
+#> Error in emoji_get(emoji): could not find function "is"
 ```
 
 ![plot of chunk mtcars](figure/mtcars-1.png) 
@@ -66,6 +67,7 @@ Some random cats?
 posx <- runif(50, 0, 10)
 posy <- runif(50, 0, 10)
 ggplot(data.frame(x = posx, y = posy), aes(x, y)) + geom_emoji(emoji="1f63b")
+#> Error in emoji_get(emoji): could not find function "is"
 ```
 
 ![plot of chunk catplotlib](figure/catplotlib-1.png) 
@@ -75,9 +77,12 @@ We can also just put a big emoji in the background:
 
 ```r
 qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(emoji="1f337")
+#> Error in emoji_get(emoji): could not find function "is"
 ```
 
-![plot of chunk big-emoji](figure/big-emoji-1.png) 
+## `ggplot2` versions
+
+Note that this branch works with the *development* version of `ggplot2` [available here](http://github.com/hadley/ggplot2/), installable using `devtools::install_github("hadley/ggplot2")`. See [this issue for more information](https://github.com/dill/emoGG/issues/3).
 
 ## Acknowledgements
 

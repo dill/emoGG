@@ -64,6 +64,10 @@ We can also just put a big emoji in the background:
 qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(emoji="1f337")
 ```
 
+## `ggplot2` versions
+
+Note that this branch works with the *development* version of `ggplot2` [available here](http://github.com/hadley/ggplot2/), installable using `devtools::install_github("hadley/ggplot2")`. See [this issue for more information](https://github.com/dill/emoGG/issues/3).
+
 ## Acknowledgements
 
 Emoji lookup is from @muan's [`emojilib`](https://github.com/muan/emojilib).
