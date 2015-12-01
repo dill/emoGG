@@ -2,6 +2,7 @@
 
 library(jsonlite)
 library(plyr)
+library(stringi)
 
 # load the emojis
 ff <- fromJSON("emojis.json")
@@ -23,6 +24,13 @@ keywords <- unlist(keywords)
 # codes
 char <- lapply(ff, function(x) if(!is.null(x$char)) x$char else "")
 char <- unlist(char)
+## get rid of unneeded bits
+# convert to strings
+char <- stri_escape_unicode(char)
+# remove variants (see https://github.com/twitter/twemoji/blob/gh-pages/twemoji.js#L316)
+char <- sub("\\\\Ufe0f$" ,"", char, ignore.case=TRUE)
+# remove leading chars
+char <- sub("^\\\\U0*" ,"", char, ignore.case=TRUE)
 
 # put that together
 options(stringsAsFactors=FALSE) # what am I, a monster?
