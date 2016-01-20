@@ -24,6 +24,10 @@ This is silly.
 devtools::install_github("dill/emoGG")
 ```
 
+## `ggplot2` versions
+
+Note that this branch works with the "old" CRAN version of `ggplot2` (1.0.1). If you are using `ggplot2` fresh from CRAN (version 2 or higher) see the `master` branch of this repository.
+
 ## Usage
 
 ```{r, load-package}
@@ -64,11 +68,6 @@ We can also just put a big emoji in the background:
 qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") + add_emoji(emoji="1f337")
 ```
 
-## `ggplot2` versions
-
-Note that this branch works with the current CRAN version of `ggplot2` (1.0.1), installable using `install.packages("ggplot2")`. See [this issue for more information](https://github.com/dill/emoGG/issues/3). Once a new version of `ggplot2` is available on CRAN, this repository will be updated.
-
-If you want to use the new version of `ggplot2`, see the `new-ggplot2` branch of this repository.
 
 ## Acknowledgements
 
