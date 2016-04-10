@@ -9,9 +9,8 @@
 #'
 #'
 #' @export
-emojisGrob <- function(x, y, size, emoji){
+emojisGrob <- function(x, y, size, img){
 
-   img <- emoji_get(emoji)[[1]]
    rasterGrob(x             = x,
               y             = y,
               image         = img,
@@ -25,11 +24,13 @@ GeomEmoji <- ggproto("GeomEmoji", Geom,
 #  desc = "Emojis!!!",
 
   #draw_panel = function(., data, scales, coordinates, ...) {
-  draw_panel = function(data, panel_scales, coord, na.rm = FALSE) {
+  draw_panel = function(data, panel_scales, coord, img, na.rm = FALSE) {
     #coords = coord_transform(coordinates, data, scales)
     coords = coord$transform(data, panel_scales)
+
     ggplot2:::ggname("geom_emoji",
-      emojisGrob(coords$x, coords$y, coords$size, coords$emoji)
+
+     emojisGrob(coords$x, coords$y, coords$size, img)
     )
   },
 
@@ -101,6 +102,11 @@ GeomEmoji <- ggproto("GeomEmoji", Geom,
 geom_emoji <- function(mapping = NULL, data = NULL, stat = "identity",
                        position = "identity", na.rm = FALSE,
                        show.legend = NA, inherit.aes = TRUE, ...) {
+  # get the emojipar
+  emojipar <- eval(substitute(alist(...)))
+  # download the emoji in advance!
+  img <- emoji_get(emojipar)[[1]]
+
   layer(
     data = data,
     mapping = mapping,
@@ -111,6 +117,7 @@ geom_emoji <- function(mapping = NULL, data = NULL, stat = "identity",
     inherit.aes = inherit.aes,
     params = list(
       na.rm = na.rm,
+      img   = img,
       ...
     )
   )

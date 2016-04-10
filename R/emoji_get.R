@@ -10,14 +10,14 @@
 #' @importFrom png readPNG
 #' @importFrom RCurl getURLContent
 #' @author David L Miller
-emoji_get <- function(input, size=72){
+emoji_get <- function(input, size=72, cdn="https://twemoji.maxcdn.com/"){
 
   # set the size (default to biggest for best display)
   size <- match.arg(as.character(size), c("72", "36", "16"))
   size <- paste0(size, "x", size)
 
   # content delivery network
-  cdn <- "https://twemoji.maxcdn.com/"
+  #cdn <- "https://twemoji.maxcdn.com/"
   format <- ".png"
 
   if(is(input, "image_info")){
