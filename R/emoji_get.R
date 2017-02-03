@@ -9,6 +9,7 @@
 #' @note Adapted from \code{rphylopic} code by Scott Chamberlain
 #' @importFrom png readPNG
 #' @importFrom RCurl getURLContent
+#' @importFrom methods is
 #' @author David L Miller
 emoji_get <- function(input, size=72, cdn="https://twemoji.maxcdn.com/"){
 
