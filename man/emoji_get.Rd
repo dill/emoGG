@@ -23,4 +23,3 @@ Adapted from \code{rphylopic} code by Scott Chamberlain
 \author{
 David L Miller
 }
-

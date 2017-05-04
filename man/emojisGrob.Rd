@@ -12,4 +12,3 @@ Use emoji as you would \code{\link{geom_point}}.
 \author{
 David L Miller
 }
-

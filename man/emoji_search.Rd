@@ -15,4 +15,3 @@ Data are taken from \url{https://github.com/muan/emojilib}
 \author{
 David L Miller
 }
-
