@@ -11,7 +11,10 @@ emoji_search <- function(search){
   dat.filename <- system.file("emojis.RData", package="emoGG")
   load(dat.filename)
 
-  key_search <- unlist(lapply(emojis$keyword, grepl, search))
+  # keywords contain things like ;) which need to be regexified
+  keywords <- gsub("([[:punct:]])", "\\\\\\1", emojis$keyword)
+  
+  key_search <- unlist(lapply(keywords, grepl, search))
   name_search <- unlist(lapply(emojis$emoji, grepl, search))
 
   return(emojis[key_search | name_search,])
