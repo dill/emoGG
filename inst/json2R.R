@@ -8,11 +8,7 @@ library(stringi)
 ff <- fromJSON("emojis.json")
 
 # extract keys
-keys <- ff$keys
-ff$keys <- NULL
-
-# is keys in the same order as ff?
-# all.equal(keys, names(ff)) # TRUE
+keys <- names(ff)
 
 # how many keywords per emoji?
 reps <- laply(ff, function(x) length(x$keywords))
