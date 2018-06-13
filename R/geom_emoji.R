@@ -105,7 +105,7 @@ geom_emoji <- function(mapping = NULL, data = NULL, stat = "identity",
   # get the emojipar
   emojipar <- eval(substitute(alist(...)))
   # download the emoji in advance!
-  img <- emoji_get(emojipar)[[1]]
+  img <- emoji_get(emojipar$emoji)[[1]]
 
   layer(
     data = data,
