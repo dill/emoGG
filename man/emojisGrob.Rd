@@ -9,6 +9,20 @@ emojisGrob(x, y, size, img)
 \description{
 Use emoji as you would \code{\link{geom_point}}.
 }
+\examples{
+\dontrun{
+library(ggplot2)
+library(emoGG)
+
+# I want a tulip to plot for the iris example data
+emoji_search("tulip")
+
+# plot the data, but with emojis
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_emoji(emoji="1f337")
+
+}
+}
 \author{
 David L Miller
 }
