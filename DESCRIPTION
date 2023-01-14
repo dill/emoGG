@@ -1,6 +1,6 @@
 Package: emoGG
 Title: Use Emoji in ggplot2
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: person("David L", "Miller", email = "dave@ninepointeightone.net", role = c("aut", "cre"))
 Description: Use emoji in ggplot2 plots...
 Depends:
@@ -13,4 +13,4 @@ Imports:
     RCurl,
     png,
     proto
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.3

@@ -4,7 +4,11 @@
 \alias{emoji_get}
 \title{Get an emoji image from its codepoint}
 \usage{
-emoji_get(input, size = 72, cdn = "https://twemoji.maxcdn.com/")
+emoji_get(
+  input,
+  size = 72,
+  cdn = "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/"
+)
 }
 \arguments{
 \item{input}{either a codepoint (without \code{\\U} etc), or the result from \code{\link{emoji_search}}}

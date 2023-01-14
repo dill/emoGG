@@ -29,11 +29,7 @@ Based on \code{add_phylopic} from \code{rphylopic} by Scott Chamberlain.
 library(ggplot2)
 library(emoGG)
 
-# Put a emoji behind a plot
-qplot(x=Sepal.Length, y=Sepal.Width, data=iris, geom="point") +
- add_emoji("1f337")
-
-# Put a silhouette anywhere
+# Put an emoji anywhere
 posx <- runif(50, 0, 10)
 posy <- runif(50, 0, 10)
 sizey <- runif(50, 0.4, 2)
@@ -42,5 +38,6 @@ p <- ggplot(data.frame(x = posx, y = posy), aes(x, y)) +
 for (i in 1:50) {
   p <- p + add_emoji("1f697", posx[i], posy[i], sizey[i])
 }
+p
 }
 }

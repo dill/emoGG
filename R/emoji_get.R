@@ -11,7 +11,7 @@
 #' @importFrom RCurl getURLContent
 #' @importFrom methods is
 #' @author David L Miller
-emoji_get <- function(input, size=72, cdn="https://twemoji.maxcdn.com/2/"){
+emoji_get <- function(input, size=72, cdn="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/"){
 
   # set the size (default to biggest for best display)
   size <- match.arg(as.character(size), c("72", "36", "16"))
