@@ -9,6 +9,7 @@
 emoji_search <- function(search){
 
   dat.filename <- system.file("emojis.RData", package="emoGG")
+  emojis <- NULL
   load(dat.filename)
 
   # keywords contain things like ;) which need to be regexified

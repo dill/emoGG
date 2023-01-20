@@ -14,6 +14,8 @@ emoji_get(
 \item{input}{either a codepoint (without \code{\\U} etc), or the result from \code{\link{emoji_search}}}
 
 \item{size}{the size of the resulting image (72, 36, 16)}
+
+\item{cdn}{location of the content delivery network to download emojis from}
 }
 \value{
 list of images

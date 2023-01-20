@@ -24,11 +24,6 @@ This is silly.
 devtools::install_github("dill/emoGG")
 ```
 
-## `ggplot2` versions
-
-Note that this branch works with `ggplot2` version 2 or higher, now available on CRAN. If you have an older version of `ggplot2` please look at the `ggplot2-pre2` branch.
-
-
 ## Usage
 
 ```{r, load-package}
@@ -54,6 +49,8 @@ What about plotting `mtcars` with **real** cars?
 ```{r mtcars, fig.height=4, fig.width=4}
 ggplot(mtcars, aes(wt, mpg))+ geom_emoji(emoji="1f697")
 ```
+
+Want to map `emoji` as an aesethetic? [Check out this gist](https://gist.github.com/dill/28bb04fc35b51326f01b23d078f5021e)!
 
 Some random cats?
 
